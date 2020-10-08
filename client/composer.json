@@ -1,0 +1,20 @@
+{
+  "name": "cornernote/nodejs-socketio",
+  "version": "0.0.1",
+  "description": "Node.js Socket.io Server",
+  "homepage": "https://github.com/cornernote/nodejs-socket/",
+  "type": "project",
+  "require": {
+    "firebase/php-jwt": "^5.0",
+    "predis/predis": "^1.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "process-timeout": 3600
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  node:
+    image: node:8
+    volumes:
+      - ./server:/home/node/server
+    ports:
+      #- 80:80
+      - 8080:8080
+      #- 443:443
+      #- 8443:8443
+    user: node
+    working_dir: /home/node/server
+    command: npm start
+
+  php:
+    image: cornernote/php:7.3.22-fpm-stretch
+    volumes:
+      - ./client/composer.json:/app/composer.json
+      - ./client/composer.lock:/app/composer.lock
+      - ./client/web:/app/web
+      - ./client/vendor:/app/vendor
+
+  redis:
+    image: redis:5.0-alpine
